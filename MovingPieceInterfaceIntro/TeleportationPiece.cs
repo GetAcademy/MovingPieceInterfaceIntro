@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MovingPieceInterfaceIntro
 {
-    class TeleportationPiece
+    class TeleportationPiece : IPiece
     {
         private int _row;
         private int _col;

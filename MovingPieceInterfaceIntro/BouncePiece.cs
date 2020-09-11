@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MovingPieceInterfaceIntro
 {
-    class BouncePiece
+    class BouncePiece : IPiece
     {
         private int _row;
         private int _col;

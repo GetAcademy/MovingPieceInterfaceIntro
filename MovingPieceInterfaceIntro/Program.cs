@@ -8,21 +8,32 @@ namespace MovingPieceInterfaceIntro
     {
         static void Main(string[] args)
         {
+            /*
+                IPiece p = null;
+                p.Move();
+                p.Show();                          
+             */
             Console.ForegroundColor = ConsoleColor.Yellow;
-            var pieces = new[]
-            {
-                new BouncePiece('T', 2, 1),
-                new BouncePiece('#', 1, 3),
-            };
+            //var pieces = new[]
+            //{
+            //    new BouncePiece('T', 2, 1),
+            //    new BouncePiece('#', 1, 3),
+            //};
             //var pieces = new[]
             //{
             //    new TeleportationPiece('T', 2, 1),
             //    new TeleportationPiece('#', 1, 3),
             //};
+            var bouncePiece = new BouncePiece('B', 2, 1);
+            var teleportationPiece = new TeleportationPiece('T', 1, 3);
+            var pieces = new IPiece[] {
+                    bouncePiece,
+                    teleportationPiece,
+                };
             while (true)
             {
                 Console.Clear();
-                foreach (var piece in pieces)
+                foreach (IPiece piece in pieces)
                 {
                     piece.Move();
                     piece.Show();
