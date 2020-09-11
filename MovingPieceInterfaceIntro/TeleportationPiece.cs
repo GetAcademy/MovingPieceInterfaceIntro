@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MovingPieceInterfaceIntro
 {
-    class Piece
+    class TeleportationPiece
     {
         private int _row;
         private int _col;
@@ -12,7 +12,7 @@ namespace MovingPieceInterfaceIntro
         private int _speedCol;
         private char _symbol;
 
-        public Piece(char symbol, int speedRow, int speedCol)
+        public TeleportationPiece(char symbol, int speedRow, int speedCol)
         {
             _symbol = symbol;
             _speedRow = speedRow;
@@ -23,8 +23,10 @@ namespace MovingPieceInterfaceIntro
         {
             _row += _speedRow;
             _col += _speedCol;
-            if (_row <= 0 || _row >= Console.WindowHeight - 1) _speedRow = -_speedRow;
-            if (_col <= 0 || _col >= Console.WindowWidth - 1) _speedCol = -_speedCol;
+            if (_row <= 0) _row += Console.WindowHeight;
+            if (_row >= Console.WindowHeight) _row -= Console.WindowHeight;
+            if (_col <= 0) _col += Console.WindowWidth;
+            if (_col >= Console.WindowWidth) _col -= Console.WindowWidth;
         }
 
         public void Show()

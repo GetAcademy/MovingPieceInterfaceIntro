@@ -9,12 +9,24 @@ namespace MovingPieceInterfaceIntro
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            var piece = new Piece('T', 2, 1);
+            var pieces = new[]
+            {
+                new BouncePiece('T', 2, 1),
+                new BouncePiece('#', 1, 3),
+            };
+            //var pieces = new[]
+            //{
+            //    new TeleportationPiece('T', 2, 1),
+            //    new TeleportationPiece('#', 1, 3),
+            //};
             while (true)
             {
-                piece.Move();
                 Console.Clear();
-                piece.Show();
+                foreach (var piece in pieces)
+                {
+                    piece.Move();
+                    piece.Show();
+                }
                 Console.CursorLeft = 0;
                 Console.CursorTop = 0;
                 Thread.Sleep(20);
