@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Threading;
 
 namespace MovingPieceInterfaceIntro
@@ -7,7 +8,8 @@ namespace MovingPieceInterfaceIntro
     {
         static void Main(string[] args)
         {
-            var piece = new Piece('#', 2, 1);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            var piece = new Piece('T', 2, 1);
             while (true)
             {
                 piece.Move();
@@ -15,7 +17,7 @@ namespace MovingPieceInterfaceIntro
                 piece.Show();
                 Console.CursorLeft = 0;
                 Console.CursorTop = 0;
-                Thread.Sleep(50);
+                Thread.Sleep(20);
             }
         }
     }
