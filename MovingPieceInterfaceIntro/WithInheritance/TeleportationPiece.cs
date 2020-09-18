@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MovingPieceInterfaceIntro.OnlyWithInterface;
 
 namespace MovingPieceInterfaceIntro.WithInheritance
 {
@@ -19,7 +20,6 @@ namespace MovingPieceInterfaceIntro.WithInheritance
             if (_row >= Console.WindowHeight) _row -= Console.WindowHeight;
             if (_col <= 0) _col += Console.WindowWidth;
             if (_col >= Console.WindowWidth) _col -= Console.WindowWidth;
-
         }
     }
 }

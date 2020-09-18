@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading;
+using MovingPieceInterfaceIntro.WithComposition;
 using MovingPieceInterfaceIntro.WithInheritance;
+using Piece = MovingPieceInterfaceIntro.WithInheritance.Piece;
 
 namespace MovingPieceInterfaceIntro
 {
@@ -27,6 +29,12 @@ namespace MovingPieceInterfaceIntro
             //};
             var bouncePiece = new BouncePiece('B', 2, 1);
             var teleportationPiece = new TeleportationPiece('T', 1, 3);
+            
+            // With composition
+            //  var bouncePiece = new Piece('B', 2, 1, new Bounce());
+            //  var teleportationPiece = new Piece('T', 1, 3, new Teleportation());
+
+
             var pieces = new Piece[]{
                     bouncePiece,
                     teleportationPiece,

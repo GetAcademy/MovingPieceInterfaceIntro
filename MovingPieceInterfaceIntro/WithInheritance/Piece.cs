@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MovingPieceInterfaceIntro.WithComposition;
 
 namespace MovingPieceInterfaceIntro.WithInheritance
 {
@@ -14,6 +15,7 @@ namespace MovingPieceInterfaceIntro.WithInheritance
 
         public Piece(char symbol, int speedRow, int speedCol)
         {
+     
             _symbol = symbol;
             _speedRow = speedRow;
             _speedCol = speedCol;
