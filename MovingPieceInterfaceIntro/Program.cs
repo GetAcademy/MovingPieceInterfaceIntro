@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading;
+using MovingPieceInterfaceIntro.WithInheritance;
 
 namespace MovingPieceInterfaceIntro
 {
@@ -26,21 +27,21 @@ namespace MovingPieceInterfaceIntro
             //};
             var bouncePiece = new BouncePiece('B', 2, 1);
             var teleportationPiece = new TeleportationPiece('T', 1, 3);
-            var pieces = new IPiece[] {
+            var pieces = new Piece[]{
                     bouncePiece,
                     teleportationPiece,
                 };
             while (true)
             {
                 Console.Clear();
-                foreach (IPiece piece in pieces)
+                foreach (Piece piece in pieces)
                 {
                     piece.Move();
                     piece.Show();
                 }
                 Console.CursorLeft = 0;
                 Console.CursorTop = 0;
-                Thread.Sleep(20);
+                Thread.Sleep(300);
             }
         }
     }
